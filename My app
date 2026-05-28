@@ -1,0 +1,244 @@
+Develop a complete enterprise-level AI-powered online exam monitoring and cheating detection system called:
+
+“ExamShield AI – Intelligent Smart Proctoring System”
+
+The application must be a real-time cybersecurity-style AI monitoring dashboard built using Python.
+
+TECH STACK:
+
+* Python
+* OpenCV
+* YOLOv8
+* Tkinter GUI
+* Pillow
+* Pandas
+* ReportLab
+* Keyboard library
+* Winsound
+* Haar Cascade
+* MediaPipe (optional for iris tracking)
+
+OBJECTIVE:
+Create a professional AI exam proctoring system that monitors student behavior during online examinations and detects suspicious activities using computer vision, typing analysis, and behavioral intelligence.
+
+MAIN FEATURES:
+
+1. REAL-TIME FACE DETECTION
+
+* Detect student face using OpenCV Haar Cascade.
+* Draw green bounding boxes around faces.
+* Display live face count.
+* Trigger alerts when multiple faces are detected.
+
+2. MULTIPLE FACE DETECTION
+   If more than one face is detected:
+
+* Show “MULTIPLE FACES DETECTED!”
+* Trigger warning sound
+* Save screenshot evidence
+* Add event to dashboard history
+* Increase cheating score
+
+3. LOOKING AWAY / HEAD MOVEMENT DETECTION
+   Track face position and eye direction:
+
+* Looking left
+* Looking right
+* Looking center
+
+If student looks away for more than 3 seconds:
+
+* Show cheating alert
+* Trigger alarm
+* Save evidence screenshot
+* Log event
+* Increase cheating percentage
+
+4. NO FACE DETECTION
+   If no face is visible for more than 3 seconds:
+
+* Display “NO FACE DETECTED”
+* Trigger warning alarm
+* Save screenshot
+* Log suspicious event
+* Increase cheating score
+
+5. YOLOv8 OBJECT DETECTION
+   Use YOLOv8 model (yolov8n.pt) to detect:
+
+* Mobile phones
+* Books
+* Laptops
+* Additional devices
+
+When detected:
+
+* Draw purple bounding boxes
+* Show object label
+* Trigger alert
+* Save evidence
+* Add event to table
+* Increase cheating score
+
+6. TYPING SPEED ANALYSIS
+   Use keyboard listener to monitor:
+
+* key presses
+* typing speed
+* abnormal typing patterns
+
+Analyze typing every 5 seconds.
+
+Typing behavior rules:
+
+* <10 keys → Normal Typing
+* 10–25 keys → Fast Typing
+* > 25 keys → Suspicious Typing
+
+Display:
+
+* typing speed
+* typing status
+* cheating probability
+
+7. CHEATING SCORE SYSTEM
+   Create a live cheating percentage system.
+
+Scoring logic:
+
+* Looking away → +20
+* Phone detected → +40
+* Multiple faces → +50
+* No face → +30
+* Suspicious typing → +40
+
+Final score must be limited to 100%.
+
+Display:
+
+* “Cheating Score: 78%”
+* real-time updates
+* color-coded risk system
+
+Risk Levels:
+
+* 0–20 → SAFE
+* 20–50 → SUSPICIOUS
+* 50–100 → HIGH RISK
+
+8. PROFESSIONAL GUI DASHBOARD
+   Create a modern cybersecurity-style dashboard using Tkinter.
+
+Dashboard must include:
+
+* live webcam feed
+* face count
+* typing speed
+* cheating score
+* alert status
+* event logs
+* dark theme UI
+* professional fonts/colors
+
+9. EVENT HISTORY TABLE
+   Add a live scrolling table below webcam.
+
+Columns:
+
+* Date & Time
+* Event
+* Screenshot Path
+
+Events should auto-update during monitoring.
+
+10. EVIDENCE MANAGEMENT
+    Automatically create folders:
+
+evidence/
+
+* multiple_faces/
+* phone_detected/
+* looking_away/
+* no_face/
+
+Save screenshots with timestamps.
+
+Example:
+20260522_183522.jpg
+
+11. WARNING ALARM SYSTEM
+    Use winsound to:
+
+* trigger beep alarms
+* include cooldown timers
+* prevent continuous sound spam
+
+12. REPORT GENERATION
+    Generate:
+
+* Excel reports (.xlsx)
+* PDF reports (.pdf)
+
+Include:
+
+* date & time
+* cheating event
+* screenshot evidence path
+* cheating percentage
+
+Save reports inside:
+reports/
+
+13. REAL-TIME PERFORMANCE
+    The application must:
+
+* process webcam frames continuously
+* update GUI in real time
+* monitor typing continuously
+* calculate cheating score dynamically
+
+14. PROFESSIONAL PROJECT STRUCTURE
+
+ExamShield_AI/
+│
+├── dashboard.py
+├── report_generator.py
+├── yolov8n.pt
+├── requirements.txt
+│
+├── evidence/
+│   ├── multiple_faces/
+│   ├── phone_detected/
+│   ├── looking_away/
+│   └── no_face/
+│
+├── reports/
+│
+└── assets/
+
+15. ADDITIONAL REQUIREMENTS
+
+* Use clean modular Python code.
+* Add comments for every major section.
+* Handle webcam errors gracefully.
+* Use timestamp-based filenames.
+* Optimize performance for real-time AI monitoring.
+* Prevent duplicate event logging using cooldown systems.
+* Make the UI visually impressive and professional.
+
+16. FINAL OUTPUT
+    Generate:
+
+* complete production-ready Python code
+* GUI dashboard
+* typing detector integration
+* YOLO object detection integration
+* cheating score engine
+* evidence logging system
+* report generation system
+* alarm system
+* organized project structure
+* installation instructions
+* requirements.txt dependencies
+
+The final application should look and behave like a professional AI cybersecurity surveillance platform used for online exam monitoring.
