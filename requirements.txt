@@ -1,0 +1,9 @@
+numpy
+opencv-python
+ultralytics
+pillow
+pandas
+openpyxl
+reportlab
+keyboard
+flask
